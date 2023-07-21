@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "todo-crud-app",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

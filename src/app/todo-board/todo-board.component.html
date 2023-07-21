@@ -1,0 +1,9 @@
+<h2>Unsere Todos:</h2>
+<div class="todos-frame">
+    <div class="todo" *ngFor="let todo of todos$ | async">
+        Name: {{todo.name}} <br>
+        Aufgabe: {{todo.task}} <br><br>
+        <button (click)="deleteTodo(todo.id)">Löschen</button>
+        <button (click)=" updateTodo(todo)">Update</button>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<h2> Füge ein Todo hinzu:</h2>
+<div class="form-frame">
+    <form (ngSubmit)="addTodo()">
+        <div class="form-container">
+            <div class="lableAndInput">
+                <label for="name">Name: </label>
+                <input type="text" id="name" name="name" [(ngModel)]="todo.name" required
+                    placeholder="Wer soll's machen?">
+            </div>
+            <div class="lableAndInput">
+                <label for="todo">Todo:</label>
+                <input type="text" id="todo" name="todo" [(ngModel)]="todo.task" required
+                    placeholder="Was soll er den tun?">
+            </div>
+
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+

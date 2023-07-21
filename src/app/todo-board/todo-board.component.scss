@@ -1,0 +1,24 @@
+.todos-frame{
+    display: flex;
+    margin-left: 16px;
+    flex-wrap: wrap;
+}
+
+.todo{
+    margin-right: 24px;
+    margin-bottom: 24px;
+    min-width: 200px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 16px 8px;
+    color: crimson;
+    font-weight: 900;
+    font-size: 24px;
+
+    button{
+        background: crimson;
+        margin-right: 8px;
+        padding: 4px 8px;
+        border-radius: 5px;
+    }
+}

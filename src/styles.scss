@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+}
+
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: 100vh;
+    background: linear-gradient(to bottom,
+         white, red);
+}
+
+h1{
+    margin: 16px;
+    font-size: 56px;
+    color: crimson;
+}
+
+h2{
+    margin-left: 16px;
+    margin-bottom: 8px;
+    color: crimson;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

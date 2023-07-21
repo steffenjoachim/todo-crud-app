@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "crudapp-todolist": {
+      "hosting": {
+        "todo-crud-app": [
+          "crudapp-todolist"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "crudapp-todolist"
+  }
+}
