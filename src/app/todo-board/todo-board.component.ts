@@ -1,7 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { Firestore, addDoc, collection, collectionData, deleteDoc, doc, getDoc } from '@angular/fire/firestore';
+import { Firestore, addDoc, collection, collectionData, deleteDoc, doc, getDoc, updateDoc } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { EditDialogComponent } from '../dialog/dialog.component';
+import { MatDialog } from '@angular/material/dialog'; // Importiere MatDialog
 
 @Component({
   selector: 'app-todo-board',
@@ -9,13 +10,14 @@ import { EditDialogComponent } from '../dialog/dialog.component';
   styleUrls: ['./todo-board.component.scss']
 })
 export class TodoBoardComponent {
-  @Input() todos$ !: Observable<any[]>;
+  @Input() todos$!: Observable<any[]>;
   todoCollection = collection(this.firestore, 'todo');
   dialog: any;
 
-  constructor(private firestore:Firestore){
+  constructor(private firestore: Firestore) { 
     this.getTodos();
   }
+
 
   @Input() todo = {
     name: '',
@@ -40,6 +42,12 @@ export class TodoBoardComponent {
   }
 
   updateTodo(todo:any){
+    const todoDoc = doc(this.todoCollection, todo.id);
+    updateDoc(todoDoc, todo);
+  }
+
+
+openDialog(todo:any): void{
     const dialogRef = this.dialog.open(EditDialogComponent, { data: {name: this.todo.name, task: this.todo.task, id: todo.id},});
 
     dialogRef.afterClosed().subscribe((result: any) => {
